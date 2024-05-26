@@ -1,5 +1,6 @@
 package com.alura.desafio.principal;
 
+import com.alura.desafio.model.Datos;
 import com.alura.desafio.service.ConsumoApi;
 import com.alura.desafio.service.ConvierteDatos;
 
@@ -12,5 +13,9 @@ public class Principal {
     public void muestraElMenu(){
      var json = consumoApi.obtenerDatos(URL_BASE);
         System.out.println(json);
+
+        var datos = conversor.obtenerDatos(json, Datos.class);
+
+        System.out.println(datos);
     }
 }
